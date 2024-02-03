@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Smartphone Program</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400;1,700&display=swap"
+		rel="stylesheet" />
+
+	<link rel="stylesheet" href="style.css" />
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+	<!-- Start:Hero Section -->
+	<section id="hero" class="bg-[rgb(255, 96, 0)] py-16 bg-[#FA6000] relative overflow-hidden">
+		<div class="ellipse1 mx-auto"></div>
+		<div class="ellipse2 mx-auto"></div>
+		<div class="px-4 max-w-screen-xl m-auto relative z-10">
+			<div class="grid text-center md:text-left md:grid-cols-2 gap-8 items-center">
+				<div>
+					<div class="bg-slate-700 text-white text-sm rounded-2xl px-2 p-1 inline-block mb-6">
+						AFFORDABLE CONNECTIVITY PROGRAM
+					</div>
+					<h1
+						class="text-shadow text-4xl xl:text-6xl font-extrabold text-white xl:text-start leading-9 tracking-tight mb-6">
+						Free
+						<span class="font-semibold xl:font-extrabold">Smartphone </span><br class="md:hidden xl:flex" />
+						+ FREE
+						<span class="font-semibold xl:font-extrabold">Unlimited </span><br /><span
+							class="text-slate-700 italic">Service</span>
+					</h1>
+					<div class="text-shadow mt-4 text-white leading-5 font-semibold xl:text-start">
+						Sign up for a FREE Unlimited Data plus a NEW Premium Smartphone*
+					</div>
+					<img width="286px" height="26px" src="images/no-contract-creditcheck.svg" alt="No Contracts Logo"
+						class="mt-4 mx-auto xl:mx-0" />
+
+					<div x-data="{ step: 1, progressWidth: 0, showSuccess: false, isButtonDisabled: true }"
+						class="max-w-[500px]">
+						<div class="mt-4 enrollment-form">
+							<h2 class="apply-now__div text-center font-extrabold text-2xl mb-4">
+								<span class="text-white">APPLY TODAY</span><br /><span class="text-[#FA6000] italic">AND
+									GET A NEW SMARTPHONE!</span>
+							</h2>
+
+							<div x-show="step < 5">
+								<div x-show="step === 1">
+									<h3 class="text-white font-bold text-xl ">
+										This is the question?
+									</h3>
+									<div class="my-4">
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Answer 1
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Answer 2
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Answer 3
+										</label>
+									</div>
+								</div>
+								<div x-show="step === 2">
+									<h3 class="text-white font-bold text-xl ">
+										Make your choice?
+									</h3>
+									<div class="my-4">
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Choice 1
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Choice 2
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Choice 3
+										</label>
+									</div>
+								</div>
+								<div x-show="step === 3">
+									<h3 class="text-white font-bold text-xl ">
+										What is your topic?
+									</h3>
+									<div class="my-4">
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Topic 1
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Topic 2
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Topic 3
+										</label>
+									</div>
+								</div>
+								<div x-show="step === 4">
+									<h3 class="text-white font-bold text-xl " x-on:click="isButtonDisabled = false">
+										Select best option?
+									</h3>
+									<div class="my-4">
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Option 1
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Option 2
+										</label>
+										<label class="text-white block mt-2 cursor-pointer"
+											x-on:click="isButtonDisabled = false">
+											<input type="radio" name="answer">
+											Option 3
+										</label>
+									</div>
+								</div>
+								<div x-show="showSuccess" x-transition:leave="transition duration-300"
+									x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+									class="text-green-400 pt-3 flex gap-2 absolute">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" class="lucide lucide-check">
+										<path d="M20 6 9 17l-5-5" />
+									</svg>
+									Your answer is correct!
+								</div>
+								<div class="bg-gray-200 rounded-xl mb-8 overflow-hidden">
+									<div class="h-2 bg-green-700 transition-all duration-150"
+										x-bind:style="{ width: progressWidth + '%' }">
+									</div>
+								</div>
+								<button x-on:click="handleButtonClick" :disabled="isButtonDisabled"
+									class="px-6 py-2 rounded-lg border border-orange-600 shadow-md text-white bg-[#fa6000] hover:bg-[#fa7900] transition-colors duration-300 text-center font-bold disabled:bg-gray-500">
+									Your Answer
+								</button>
+
+							</div>
+
+
+							<form x-show="step > 4" id="myForm" novalidate=""
+								class="apply-now__form__wrapper ng-untouched ng-pristine ng-invalid">
+								<p class="text-lg text-green-500 font-bold mb-4 flex gap-2">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" class="lucide lucide-check">
+										<path d="M20 6 9 17l-5-5" />
+									</svg>
+									Your answer is correct now fill out
+									this
+									form.
+								</p>
+								<div formgroupname="newLeadForm" class="grid gap-4">
+									<input type="email" id="" aria-describedby="zipCodeHelp" name="email"
+										placeholder="Email"
+										class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+
+									<input type="text" id="" aria-describedby="zipCodeHelp" name="phonenumber"
+										placeholder="Phone"
+										class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+
+									<input type="text" id="zipCode" aria-describedby="zipCodeHelp" name="zip"
+										placeholder="ZIP Code" maxlength="5"
+										class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+									<input type="hidden" id="trackingid" name="trackingid" />
+									<div id="div-text" class="rounded-lg">
+										<button type="submit" id="button-newLead"
+											class="cl-button px-5 w-full h-12 text-white text-center font-bold lg:h-12"
+											style="text-shadow: 0px 1px 3px rgba(34, 34, 34, 0.4)">
+											Get Mine
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center justify-end relative">
+					<div class="">
+						<img src="images/tablet-with-family2.webp" alt="Tablet with Family" class="w-[80%] ml-auto" />
+						<img src="images/zero-for-your-plan.svg" alt="Zero for your plan"
+							class="absolute top-0 left-0 w-[30%] md:w-[20%]" />
+						<img src="images/new-tablet-badge.svg" alt="New tablet badge"
+							class="absolute right-0 bottom-0 md:bottom-24 w-[30%]" />
+						<img src="images/tablet-attr-logos.svg" alt="New tablet badge"
+							class="absolute left-0 bottom-6 md:bottom-24 w-[30%] md:w-[20%]" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End:Hero Section -->
+
+	<!-- Start:What is Section -->
+	<section class="py-24">
+		<div class="px-4 max-w-screen-xl m-auto relative">
+			<h2 class="text-center font-extrabold text-[#FA6000] text-5xl mb-12">
+				What Is Included
+			</h2>
+			<div class="grid md:grid-cols-2 gap-8">
+				<div>
+					<div id="includedBox" class="border shadow-lg rounded-lg p-8">
+						<h3 class="text-slate-700 font-extrabold text-xl mb-6"> NEW Premium Smartphone
+						</h3>
+						<div class="grid gap-8 md:grid-cols-2">
+							<div>
+								<div class="flex flex-row gap-4">
+									<img width="22.47px" height="26px" src="images/phone-icon.svg"
+										alt="WirelessNow Logo">
+									<div class="font-bold text-gray-600">Ultra Sharp TouchScreen
+									</div>
+								</div>
+								<div class="mt-4 flex flex-row gap-4">
+									<img width="22.47px" height="26px" src="images/android-icon.svg"
+										alt="WirelessNow Logo">
+									<div class="font-bold text-gray-600">2023 Android™</div>
+								</div>
+								<div class="mt-4 flex flex-row gap-4">
+									<img width="22.47px" height="26px" src="images/camera-icon.svg"
+										alt="WirelessNow Logo">
+									<div class="font-bold text-gray-600">High Definition Camera
+									</div>
+								</div>
+								<div class="mt-4 flex flex-row gap-4">
+									<img width="22.47px" height="26px" src="images/wifi-icon.svg"
+										alt="WirelessNow Logo">
+									<div class="font-bold text-gray-600"> FREE UNLIMITED DATA
+									</div>
+								</div>
+								<div class="mt-4 flex flex-row gap-4">
+									<img width="22.47px" height="26px" src="images/memory-icon.svg"
+										alt="WirelessNow Logo">
+									<div class="font-bold text-gray-600">High speed Wifi</div>
+								</div>
+							</div>
+							<div class="flex justify-center">
+								<img src="images/included-tablet.png" alt="WirelessNow Logo">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-8">
+					<div class="p-6 border rounded-lg shadow-lg flex gap-8 flex-grow">
+						<img class="w-16" src="images/conversation.svg" alt="Unlimited Free Data">
+						<div>
+							<h3 class="font-bold text-xl">
+								UNLIMITED FREE Data
+							</h3>
+							<p class="mt-3 text-sm md:text-[1rem]"> Get <strong class="font-bold">UNLIMITED</strong>
+								<strong class="font-bold">high-speed
+									data</strong>
+								every
+								month on one of
+								America's <span class="font-bold">largest 5G Networks</span>.
+							</p>
+						</div>
+					</div>
+					<div class="p-6 border rounded-lg shadow-lg flex gap-8 flex-grow">
+						<img class="w-16" src="images/deliver-items.svg" alt="Unlimited Free Data">
+						<div>
+							<h3 class="font-bold text-xl">
+								FREE Shipping
+							</h3>
+							<div class="mt-3 text-sm md:text-[1rem]"> Enroll today
+								and receive your <strong class="font-bold">Smartphone</strong> with
+								<strong class="font-bold">FREE UNLIMITED data</strong> in just a few
+								days.
+								Don't waste any more time!
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End:What is Section -->
+	<!-- Start:How to qualify Section -->
+	<section class="pt-24 md:py-12 bg-gray-700">
+		<div class="max-w-screen-lg px-4 mx-auto">
+			<div class="grid gap-8 md:grid-cols-2 items-center">
+				<div>
+					<h2 class="text-[#FA6000] font-bold text-4xl mb-4">
+						How To Qualify
+					</h2>
+					<p class="text-white mb-4">
+						If you already receive a government benefit like CSG, RDP, SNP, SRD, HSS, NFRP, SRD, EPWP, or
+						OAG, you may qualify instantly. This programme is designed so that folks like you can get the
+						relief you need in tough times.
+					</p>
+				</div>
+				<div class="text-center">
+					<img src="images/tablet-mother.webp" alt="WirelessNow Logo" class="max-w-full w-[400px]">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Start: How to qualify Section -->
+
+	<!-- Start: Get premium Section -->
+	<section class="py-24">
+		<div class="max-w-screen-xl px-4 mx-auto">
+			<div class="max-w-screen-sm m-auto mb-8">
+				<h2 class="text-center font-extrabold text-[#FA6000] text-3xl leading-tight">
+					Get Your
+					Premium Smartphone<strong class="font-normal text-xl"><sup>*</sup></strong>
+					&amp; <span class="text-gray-700">FREE UNLIMITED Internet NOW!</span>
+				</h2>
+				<div class="text-ge mt-3 text-center"> Start your enrollment
+					right now and receive a new smartphone <span class="font-bold">Shipping is
+						on us!</span>
+				</div>
+			</div>
+			<div x-data="{ step: 1, progressWidth: 0, showSuccess: false, isButtonDisabled: true }"
+				class="max-w-[500px] mx-auto">
+				<div class="mt-4 enrollment-form">
+					<h2 class="apply-now__div text-center font-extrabold text-2xl mb-4">
+						<span class="text-white">APPLY TODAY</span><br /><span class="text-[#FA6000] italic">AND
+							GET A NEW SMARTPHONE!</span>
+					</h2>
+
+					<div x-show="step < 5">
+						<div x-show="step === 1">
+							<h3 class="text-white font-bold text-xl ">
+								This is the question?
+							</h3>
+							<div class="my-4">
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Answer 1
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Answer 2
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Answer 3
+								</label>
+							</div>
+						</div>
+						<div x-show="step === 2">
+							<h3 class="text-white font-bold text-xl ">
+								Make your choice?
+							</h3>
+							<div class="my-4">
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Choice 1
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Choice 2
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Choice 3
+								</label>
+							</div>
+						</div>
+						<div x-show="step === 3">
+							<h3 class="text-white font-bold text-xl ">
+								What is your topic?
+							</h3>
+							<div class="my-4">
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Topic 1
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Topic 2
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Topic 3
+								</label>
+							</div>
+						</div>
+						<div x-show="step === 4">
+							<h3 class="text-white font-bold text-xl " x-on:click="isButtonDisabled = false">
+								Select best option?
+							</h3>
+							<div class="my-4">
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Option 1
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Option 2
+								</label>
+								<label class="text-white block mt-2 cursor-pointer"
+									x-on:click="isButtonDisabled = false">
+									<input type="radio" name="answer">
+									Option 3
+								</label>
+							</div>
+						</div>
+						<div x-show="showSuccess" x-transition:leave="transition duration-300"
+							x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+							class="text-green-400 pt-3 flex gap-2 absolute">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="lucide lucide-check">
+								<path d="M20 6 9 17l-5-5" />
+							</svg>
+							Your answer is correct!
+						</div>
+						<div class="bg-gray-200 rounded-xl mb-8 overflow-hidden">
+							<div class="h-2 bg-green-700 transition-all duration-150"
+								x-bind:style="{ width: progressWidth + '%' }">
+							</div>
+						</div>
+						<button x-on:click="handleButtonClick" :disabled="isButtonDisabled"
+							class="px-6 py-2 rounded-lg border border-orange-600 shadow-md text-white bg-[#fa6000] hover:bg-[#fa7900] transition-colors duration-300 text-center font-bold disabled:bg-gray-500">
+							Your Answer
+						</button>
+
+					</div>
+
+
+					<form x-show="step > 4" id="myForm" novalidate=""
+						class="apply-now__form__wrapper ng-untouched ng-pristine ng-invalid">
+						<p class="text-lg text-green-500 font-bold mb-4 flex gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="lucide lucide-check">
+								<path d="M20 6 9 17l-5-5" />
+							</svg>
+							Your answer is correct now fill out
+							this
+							form.
+						</p>
+						<div formgroupname="newLeadForm" class="grid gap-4">
+							<input type="email" id="" aria-describedby="zipCodeHelp" name="email" placeholder="Email"
+								class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+
+							<input type="text" id="" aria-describedby="zipCodeHelp" name="phonenumber"
+								placeholder="Phone"
+								class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+
+							<input type="text" id="zipCode" aria-describedby="zipCodeHelp" name="zip"
+								placeholder="ZIP Code" maxlength="5"
+								class="bg-white h-11 w-full rounded-lg px-4 py-3 text-inputGrey border-1 border-inputGrey placeholder:text-inputGrey ng-untouched ng-pristine ng-invalid" />
+							<input type="hidden" id="trackingid" name="trackingid" />
+							<div id="div-text" class="rounded-lg">
+								<button type="submit" id="button-newLead"
+									class="cl-button px-5 w-full h-12 text-white text-center font-bold lg:h-12"
+									style="text-shadow: 0px 1px 3px rgba(34, 34, 34, 0.4)">
+									Get Mine
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- End: Get premium Section -->
+	<!-- Start: FAQ Section -->
+	<section class="bg-gray-200	py-24">
+		<div class="max-w-screen-xl px-4 mx-auto">
+			<h2 class="font-bold text-4xl text-center text-slate-700 mb-12">
+				Frequently Asked Questions
+			</h2>
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="flex flex-col gap-4">
+					<div x-data="{ open: false, maxHeight: 0 }"
+						x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+						class="border border-gray-300 bg-white rounded-xl">
+						<h3 x-on:click="open = !open"
+							class="text-xl font-bold cursor-pointer px-4 py-3 flex justify-between">
+							<span>
+								Who are we?
+							</span>
+							<svg x-bind:class="open && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+								<path d="m6 9 6 6 6-6" />
+							</svg>
+						</h3>
+						<div x-show="open" x-ref="accordionContent" :style="open && { 'max-height': maxHeight }"
+							class="text-sm text-gray-600 p-4 pt-0">
+							A growing and leading mobile tech company offering products to low income households.
+						</div>
+					</div>
+					<div x-data="{ open: false, maxHeight: 0 }"
+						x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+						class="border border-gray-300 bg-white rounded-xl">
+						<h3 x-on:click="open = !open"
+							class="text-xl font-bold cursor-pointer px-4 py-3 flex justify-between">
+							<span>
+								How is the service free?
+							</span>
+							<svg x-bind:class="open && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+								<path d="m6 9 6 6 6-6" />
+							</svg>
+						</h3>
+						<div x-show="open" x-ref="accordionContent" :style="open && { 'max-height': maxHeight }"
+							class="text-sm text-gray-600 p-4 pt-0">
+							You are enrolling in a participation programme which means you might not get it. The folks
+							who get it are chosen at random.
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-4">
+					<div x-data="{ open: false, maxHeight: 0 }"
+						x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+						class="border border-gray-300 bg-white rounded-xl">
+						<h3 x-on:click="open = !open"
+							class="text-xl font-bold cursor-pointer px-4 py-3 flex justify-between">
+							<span>
+								What About The Authorization charge?
+							</span>
+							<svg x-bind:class="open && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+								<path d="m6 9 6 6 6-6" />
+							</svg>
+						</h3>
+						<div x-show="open" x-ref="accordionContent" :style="open && { 'max-height': maxHeight }"
+							class="text-sm text-gray-600 p-4 pt-0">
+							Once your smartphone order is confirmed, there is a mandatory $6.99 authorisation charge to
+							see if you are approved or not.
+						</div>
+					</div>
+					<div x-data="{ open: false, maxHeight: 0 }"
+						x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+						class="border border-gray-300 bg-white rounded-xl">
+						<h3 x-on:click="open = !open"
+							class="text-xl font-bold cursor-pointer px-4 py-3 flex justify-between">
+							<span>
+								What’s Next?
+							</span>
+							<svg x-bind:class="open && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+								<path d="m6 9 6 6 6-6" />
+							</svg>
+						</h3>
+						<div x-show="open" x-ref="accordionContent" :style="open && { 'max-height': maxHeight }"
+							class="text-sm text-gray-600 p-4 pt-0">
+							After the authorisation charge is done, sit back and relax, and wait for your smartphone to
+							arrive.
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+	<!-- End: FAQ Section -->
+	<footer class="bg-[#FA6000] py-16">
+		<div class="max-w-screen-xl px-4 mx-auto">
+			<div class="grid gap-8 md:grid-cols-2 items-center">
+				<h2 class="text-3xl text-white font-bold">
+					Official Program
+				</h2>
+				<div>
+					<h3 class="text-2xl font-bold text-white mb-3">
+						Need more detail?
+					</h3>
+					<ul class="flex flex-col gap-1">
+
+						<li>
+							<a href="contact.html" class="text-white hover:underline cursor-pointer">Contact</a>
+						</li>
+						<li>
+							<a href="privacy.html" class="text-white hover:underline cursor-pointer">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="tos.html" class="text-white hover:underline cursor-pointer">Terms of Service</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script>
+		function handleButtonClick() {
+			// Disable the button
+			this.isButtonDisabled = true;
+
+			// Add a delay before changing the step and showing the success message
+			setTimeout(() => {
+				this.step = this.step + 1;
+				this.progressWidth = (this.step / 4) * 100;
+				this.showSuccess = true;
+
+				// Hide the success message after 300 milliseconds
+				setTimeout(() => {
+					this.showSuccess = false;
+				}, 1000);
+			}, 300);
+		}
+	</script>
+
+
+	<script type="module" src="main.js"></script>
+</body>
+
+</html>
